@@ -14,7 +14,7 @@ import { Form, FormField, FormItem, FormLabel, FormMessage } from '@/components/
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-const page = () => {
+const Page = () => {
     const router=useRouter();
     const form = useForm<z.infer<typeof verifySchema>>({
         resolver: zodResolver(verifySchema),
@@ -71,4 +71,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

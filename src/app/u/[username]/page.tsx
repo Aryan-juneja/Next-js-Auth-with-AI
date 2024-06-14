@@ -22,7 +22,7 @@ import { useCompletion } from '@ai-sdk/react'
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
-const page = (context:any) => {
+const Page = (context:any) => {
     const[isLoading,setIsLoading] =useState(false);
     const { params } = context;
     const username = params?.username;
@@ -162,4 +162,4 @@ const page = (context:any) => {
   )
 }
 
-export default page
+export default Page

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { verifySchema } from '@/schemas/verifySchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useParams, useRouter } from 'next/navigation'
-import { toast, useToast } from "@/components/ui/use-toast"
+import { toast } from "@/components/ui/use-toast"
 
 import React from 'react'
 import { z } from 'zod';
@@ -18,6 +18,9 @@ const Page = () => {
     const router=useRouter();
     const form = useForm<z.infer<typeof verifySchema>>({
         resolver: zodResolver(verifySchema),
+        defaultValues:{
+          code:''
+        }
       })
       const params =useParams();
       const onSubmit=async(data:z.infer<typeof verifySchema>)=>{
@@ -58,7 +61,7 @@ const Page = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Verification Code</FormLabel>
-                <Input {...field} />
+                <Input {...field}  />
                 <FormMessage />
               </FormItem>
             )}

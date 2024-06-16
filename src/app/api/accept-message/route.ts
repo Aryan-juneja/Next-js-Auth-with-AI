@@ -17,7 +17,7 @@ try {
           }
         const userId =user._id;
         const {acceptingMessage} =await request.json();
-        console.log(acceptingMessage)
+        
         const updatedUser = await userModel.findByIdAndUpdate(
             userId,
             { isAcceptingMessage: acceptingMessage },
